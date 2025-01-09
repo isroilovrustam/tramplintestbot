@@ -18,8 +18,12 @@ async def profile_handler(message: types.Message):
         phone = user[3]  # Telefon
         score = user[4]
         passed = user[5]
-        response = f"👤 Profil ma'lumotlaringiz:\n\nIsm: {name}\nUsername: {username}\nTelefon: {phone}\nScore: {score}\nPassed: {passed}"
-        await dp.bot.send_message(message.from_user.id, response)  # Xabar yuborish
+        if int(passed) == 1:
+            response = f"👤 Profil ma'lumotlaringiz:\n\nIsm: {name}\nUsername: {username}\nTelefon: {phone}\nScore: {score}\nPassed: ✅"
+            await dp.bot.send_message(message.from_user.id, response)  # Xabar yuborish
+        else:
+            response = f"👤 Profil ma'lumotlaringiz:\n\nIsm: {name}\nUsername: {username}\nTelefon: {phone}\nScore: {score}\nPassed: ❌"
+            await dp.bot.send_message(message.from_user.id, response)  # Xabar yuborish
 
     else:
         response = "Siz ro'yxatdan o'tmagan ekansiz. Iltimos, ro'yxatdan o'ting."

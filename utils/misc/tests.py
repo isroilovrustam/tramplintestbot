@@ -24,39 +24,99 @@
 
 testlar = {
     'bir': {
-        "savol": "1nmadur nmadur nmadur nmadur nmadur",
-        "A": 0,
-        "B": 1,
-        "C": 0,
-        "D": 0,
+        "savol": "Quyidagi hayvonlardan qaysi biri sutemizuvchilar toifasiga kiradi?",
+        "A": {
+            "variant1": "Qush",
+            "ball": 1
+        },
+        "B": {
+            "variant1": "Baliq",
+            "ball": 0
+        },
+        "C": {
+            "variant1": "Mushuk",
+            "ball": 0
+        },
+        "D": {
+            "variant1": "Ilon",
+            "ball": 0
+        },
     },
     'ikki': {
-        "savol": "2nmadur nmadur nmadur nmadur nmadur",
-        "A": 0,
-        "B": 1,
-        "C": 0,
-        "D": 0,
+        "savol": "Yerning sun'iy yo'ldoshini qanday atashadi?",
+        "A": {
+            "variant1": "Oy",
+            "ball": 1
+        },
+        "B": {
+            "variant1": "Yulduz",
+            "ball": 0
+        },
+        "C": {
+            "variant1": "Sputnik",
+            "ball": 0
+        },
+        "D": {
+            "variant1": "Quyosh",
+            "ball": 0
+        },
     },
     'uch': {
         "savol": "3nmadur nmadur nmadur nmadur nmadur",
-        "A": 0,
-        "B": 1,
-        "C": 0,
-        "D": 0,
+        "A": {
+            "variant1": "natija manashu",
+            "ball": 1
+        },
+        "B": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "C": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "D": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
     },
     'tort': {
         "savol": "4nmadur nmadur nmadur nmadur nmadur",
-        "A": 0,
-        "B": 1,
-        "C": 0,
-        "D": 0,
+        "A": {
+            "variant1": "natija manashu",
+            "ball": 1
+        },
+        "B": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "C": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "D": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
     },
     'besh': {
         "savol": "5nmadur nmadur nmadur nmadur nmadur",
-        "A": 0,
-        "B": 1,
-        "C": 0,
-        "D": 0,
+        "A": {
+            "variant1": "natija manashu",
+            "ball": 1
+        },
+        "B": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "C": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
+        "D": {
+            "variant1": "natija manashu",
+            "ball": 0
+        },
     },
 }
 

@@ -64,8 +64,8 @@ async def hsa(call: types.CallbackQuery):
     await call.message.delete()
     await call.message.answer("Test ishlashni boshladik!", reply_markup=test_btn)
     question = testlar['bir']["savol"]
-    options = "\n".join([f"A: {testlar['bir']['A']}", f"B: {testlar['bir']['B']}", f"C: {testlar['bir']['C']}",
-                         f"D: {testlar['bir']['D']}"])
+    options = "\n".join([f"A: {testlar['bir']['A']['variant1']}", f"B: {testlar['bir']['B']['variant1']}", f"C: {testlar['bir']['C']['variant1']}",
+                         f"D: {testlar['bir']['D']['variant1']}"])
 
     await call.message.answer(f"1. Savol: {question}\n{options}")
     await TestState.question_1.set()
@@ -79,8 +79,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
         {"question_1": testlar['bir'][question_1]}
     )
     question = testlar['ikki']["savol"]
-    options = "\n".join([f"A: {testlar['ikki']['A']}", f"B: {testlar['ikki']['B']}", f"C: {testlar['ikki']['C']}",
-                         f"D: {testlar['ikki']['D']}"])
+    options = "\n".join([f"A: {testlar['ikki']['A']['variant1']}", f"B: {testlar['ikki']['B']['variant1']}", f"C: {testlar['ikki']['C']['variant1']}",
+                         f"D: {testlar['ikki']['D']['variant1']}"])
 
     await message.answer(f"2. Savol: {question}\n{options}")
     await TestState.question_2.set()
@@ -94,8 +94,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
         {"question_2": testlar['ikki'][question_2]}
     )
     question = testlar['uch']["savol"]
-    options = "\n".join([f"A: {testlar['uch']['A']}", f"B: {testlar['uch']['B']}", f"C: {testlar['uch']['C']}",
-                         f"D: {testlar['uch']['D']}"])
+    options = "\n".join([f"A: {testlar['uch']['A']['variant1']}", f"B: {testlar['uch']['B']['variant1']}", f"C: {testlar['uch']['C']['variant1']}",
+                         f"D: {testlar['uch']['D']['variant1']}"])
 
     await message.answer(f"3. Savol: {question}\n{options}")
     await TestState.question_3.set()
@@ -109,8 +109,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
         {"question_3": testlar['uch'][question_3]}
     )
     question = testlar['uch']["savol"]
-    options = "\n".join([f"A: {testlar['tort']['A']}", f"B: {testlar['tort']['B']}", f"C: {testlar['tort']['C']}",
-                         f"D: {testlar['tort']['D']}"])
+    options = "\n".join([f"A: {testlar['tort']['A']['variant1']}", f"B: {testlar['tort']['B']['variant1']}", f"C: {testlar['tort']['C']['variant1']}",
+                         f"D: {testlar['tort']['D']['variant1']}"])
 
     await message.answer(f"4. Savol: {question}\n{options}")
     await TestState.question_4.set()
@@ -124,8 +124,8 @@ async def answer_fullname(message: types.Message, state: FSMContext):
         {"question_4": testlar['tort'][question_4]}
     )
     question = testlar['besh']["savol"]
-    options = "\n".join([f"A: {testlar['besh']['A']}", f"B: {testlar['besh']['B']}", f"C: {testlar['besh']['C']}",
-                         f"D: {testlar['besh']['D']}"])
+    options = "\n".join([f"A: {testlar['besh']['A']['variant1']}", f"B: {testlar['besh']['B']['variant1']}", f"C: {testlar['besh']['C']['variant1']}",
+                         f"D: {testlar['besh']['D']['variant1']}"])
 
     await message.answer(f"5. Savol: {question}\n{options}")
     await TestState.question_5.set()
@@ -145,7 +145,7 @@ async def answer_fullname(message: types.Message, state: FSMContext):
     question_3 = data.get("question_3")
     question_4 = data.get("question_4")
     question_5 = data.get("question_5")
-    score = int(question_1) + int(question_2) + int(question_3) + int(question_4) + int(question_5)
+    score = int(question_1['ball']) + int(question_2['ball']) + int(question_3['ball']) + int(question_4['ball']) + int(question_5['ball'])
     msg = f"Score : {score}"
     passed = False
     if score > 2:
