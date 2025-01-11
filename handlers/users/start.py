@@ -1,16 +1,25 @@
+import requests
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 
-from data.config import CHANNELS
+from data.config import CHANNELS, API
 from keyboards.inline.subscription_inline import check_button
 from loader import dp
 from utils.misc import subscription
-from keyboards.default.start_button import start_btn
+from keyboards.default.start_button import start_btn, start_btnn
 
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    await message.answer(f"Salom, {message.from_user.full_name}!", reply_markup=start_btn)
+    user_id = message.from_user.id
+
+    # Foydalanuvchi holatini aniqlash (API yoki ma'lumotlar bazasi orqali)
+    response = requests.get(f"{API}/users/detail/{user_id}")
+    if response.status_code == 404:
+        await message.answer(f"Salom, {message.from_user.full_name}!", reply_markup=start_btn)
+
+    else:
+        await message.answer(f"Salom, {message.from_user.full_name}!", reply_markup=start_btnn)
 
 
 @dp.callback_query_handler(text="check_subs")

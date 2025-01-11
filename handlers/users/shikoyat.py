@@ -8,9 +8,9 @@ from states.profile_state import TaklifState
 from keyboards.default.start_button import start_btn
 
 
-@dp.message_handler(text="📝 Taklif qoldirish")
+@dp.message_handler(text="📨 Taklif qoldirish")
 async def enter_test(message: types.Message):
-    await message.answer(f"Salom {message.from_user.full_name} Qanday taklifingiz bor ⁉️",
+    await message.answer(f"Salom {message.from_user.full_name}\nQanday taklifingiz bor ⁉️",
                          reply_markup=ha_yoq_taklif)
 
 

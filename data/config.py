@@ -8,5 +8,6 @@ env.read_env()
 BOT_TOKEN = env.str("BOT_TOKEN")  # Bot toekn
 ADMINS = env.list("ADMINS")  # adminlar ro'yxati
 IP = env.str("ip")  # Xosting ip manzili
+API = env.str("API")
 CHANNELS = ["-1001854827629"]
 GROUP_ID = -4695984516
