@@ -3,34 +3,9 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from loader import dp, db, bot
+from loader import dp, bot
 from data.config import GROUP_ID, API
 from states.profile_state import TestState
-
-# @dp.message_handler(text="📝 Test ishlash")
-# async def test(message: types):
-#     try:
-#         response = requests.get(url=f"{API}/tests/")
-#         data = response.json()
-#         print(data)
-#         if not data:
-#             await message.answer("No users found.")
-#             return
-#         for idx, i in enumerate(data, 1):
-#             text = f"Question: {i.get('question', 'Unknown')}\n"
-#             text += f"A: {i.get('a', 'Unknown')}\n"
-#             text += f"B: {i.get('b', 'Unknown')}\n"
-#             text += f"C: {i.get('c', 'Unknown')}\n"
-#             text += f"D: {i.get('d', 'Unknown')}\n\n"
-#
-#             await message.answer(text)
-#
-#     except Exception as e:
-#         await message.answer(f"An error occurred: {e}")
-
-
-# Ballarni saqlash
-user_scores = {}
 
 
 @dp.message_handler(text="📝 Test ishlash")
@@ -47,7 +22,7 @@ async def test(message: types.Message, state: FSMContext):
             await message.answer("Siz testdan o'tgansiz")
             return
         if user['score']:
-            await message.answer("Qqayta test ishlab bo'lmaydi!")
+            await message.answer("Qayta test ishlab bo'lmaydi!")
             return
         if not data:
             await message.answer("Testlar topilmadi.")
