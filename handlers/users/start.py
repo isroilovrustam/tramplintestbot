@@ -8,6 +8,8 @@ from loader import dp
 from utils.misc import subscription
 from keyboards.default.start_button import start_btn, start_btnn
 
+from html import escape
+
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
@@ -15,11 +17,12 @@ async def bot_start(message: types.Message):
 
     # Foydalanuvchi holatini aniqlash (API yoki ma'lumotlar bazasi orqali)
     response = requests.get(f"{API}/users/detail/{user_id}")
+    user_full_name = escape(message.from_user.full_name)
     if response.status_code == 404:
-        await message.answer(f"Salom, {message.from_user.full_name}!", reply_markup=start_btn)
+        await message.answer(f"Salom, {user_full_name}!", reply_markup=start_btn)
 
     else:
-        await message.answer(f"Salom, {message.from_user.full_name}!", reply_markup=start_btnn)
+        await message.answer(f"Salom, {user_full_name}!", reply_markup=start_btnn)
 
 
 @dp.callback_query_handler(text="check_subs")

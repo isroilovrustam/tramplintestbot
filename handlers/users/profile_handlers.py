@@ -32,12 +32,12 @@ async def profile_handler(message: types.Message, state: FSMContext):
 
             # Javob xabari
             response_text = (
-                f"<b>👤 Sizning profil ma'lumotlaringiz:</b>\n\n"
-                f"🧑‍💼 <b>Ism:</b> {full_name}\n"
-                f"🆔 <b>Username:</b> @{username}\n"
-                f"📞 <b>Telefon:</b> {phone}\n"
-                f"⭐ <b>Sizning balingiz:</b> {score}\n"
-                f"❓ <b>Natija:</b> {passed_status}"
+                f"👤 Sizning profil ma'lumotlaringiz:\n\n"
+                f"🧑‍💼 Ism: {full_name}\n"
+                f"🆔 Username: @{username}\n"
+                f"📞 Telefon: {phone}\n"
+                f"⭐ Sizning balingiz: {score}\n"
+                f"❓ Natija: {passed_status}"
             )
 
         else:
@@ -82,7 +82,6 @@ async def get_phone(message: types.Message, state: FSMContext):
         # Oddiy xabar orqali yuborilgan raqam
     else:
         phone = message.text
-        print(phone, "dsdf")
     if not phone.isdigit() or not phone.startswith("998") or len(phone) != 12:
         await message.answer("Telefon raqami '998XXXXXXXXX' shaklida bo'lishi kerak. Qaytadan kiriting:")
         return
